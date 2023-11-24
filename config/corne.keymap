@@ -22,6 +22,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        ALT_BS_DEL: ALT_BS_DEL {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_BS_DEL";
+            bindings = <&mt RIGHT_ALT BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -35,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                  &kp Q  &kp W  &kp E     &kp R     &kp T          &kp Y        &kp U          &kp I      &kp O    &kp P     &bs_del
-&mt LEFT_SHIFT CAPSLOCK  &kp A  &kp S  &kp D     &kp F     &kp G          &kp H        &kp J          &kp K      &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
-&kp LCTRL                &kp Z  &kp X  &kp C     &kp V     &kp B          &kp N        &kp M          &kp COMMA  &kp DOT  &kp FSLH  &mt RCTRL ESCAPE
-                                       &kp LGUI  &kp LALT  &lt 1 ENTER    &lt 2 SPACE  &kp RIGHT_ALT  &to 3
+&kp TAB                  &kp Q  &kp W  &kp E     &kp R             &kp T          &kp Y        &kp U        &kp I      &kp O    &kp P     &bs_del
+&mt LEFT_SHIFT CAPSLOCK  &kp A  &kp S  &kp D     &kp F             &kp G          &kp H        &kp J        &kp K      &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
+&kp LCTRL                &kp Z  &kp X  &kp C     &kp V             &kp B          &kp N        &kp M        &kp COMMA  &kp DOT  &kp FSLH  &mt RCTRL ESCAPE
+                                       &kp LGUI  &mt LEFT_ALT TAB  &lt 1 ENTER    &lt 2 SPACE  &ALT_BS_DEL  &to 3
             >;
         };
 
@@ -65,10 +74,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT      &kp CARET  &kp AMPERSAND   &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp GRAVE        &kp TILDE    &kp MINUS  &kp UNDER   &kp EQUAL        &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans
-&trans  &trans           &trans       &trans     &kp PIPE    &kp BACKSLASH    &trans     &trans          &trans           &trans                &trans                 &trans
-                                      &trans     &trans      &trans           &trans     &trans          &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT      &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp GRAVE        &kp TILDE    &kp MINUS  &kp UNDER   &kp EQUAL        &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
+&trans  &trans           &trans       &trans     &kp PIPE    &kp BACKSLASH    &trans     &trans            &trans             &trans                &trans                 &trans
+                                      &trans     &trans      &trans           &trans     &trans            &trans
             >;
         };
 
