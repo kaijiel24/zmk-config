@@ -63,9 +63,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        caps: caps {
+        caps_mac_hold: caps_mac_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "CAPS";
+            label = "CAPS_MAC_HOLD";
             bindings = <&kp>, <&caps_mac>;
 
             #binding-cells = <2>;
@@ -97,10 +97,10 @@
 
         mac_layer {
             bindings = <
-&trans              &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&caps LEFT_SHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&trans              &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-                                    &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &trans
+&trans                       &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+&caps_mac_hold LEFT_SHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+&trans                       &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+                                             &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &trans
             >;
         };
 
