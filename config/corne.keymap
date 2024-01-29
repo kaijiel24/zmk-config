@@ -35,9 +35,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        alt_bs_del: alt_bs_del {
+        bs_del_alt: bs_del_alt {
             compatible = "zmk,behavior-mod-morph";
-            label = "ALT_BS_DEL";
+            label = "BS_DEL_ALT";
             bindings = <&mt RIGHT_ALT BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -53,12 +53,21 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        bs_del_gui: bs_del_gui {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BS_DEL_GUI";
+            bindings = <&mt RIGHT_GUI BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        win_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -69,7 +78,16 @@
 &kp TAB                  &kp Q  &kp W  &kp E     &kp R             &kp T          &kp Y        &kp U        &kp I                  &kp O    &kp P     &bs_del
 &mt LEFT_SHIFT CAPSLOCK  &kp A  &kp S  &kp D     &kp F             &kp G          &kp H        &kp J        &kp K                  &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
 &kp LCTRL                &kp Z  &kp X  &kp C     &kp V             &kp B          &kp N        &kp M        &kp COMMA              &kp DOT  &kp FSLH  &mt RCTRL ESCAPE
-                                       &kp LGUI  &mt LEFT_ALT TAB  &lt 1 ENTER    &lt 2 SPACE  &alt_bs_del  &hold_num 3 BACKSPACE
+                                       &kp LGUI  &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 3 SPACE  &bs_del_gui  &hold_num 4 BACKSPACE
+            >;
+        };
+
+        mac_layer {
+            bindings = <
+&trans  &trans  &trans  &trans        &trans        &trans    &trans  &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans        &trans    &trans  &trans       &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans        &trans    &trans  &trans       &trans  &trans  &trans  &trans
+                        &kp LEFT_ALT  &mt LGUI TAB  &trans    &trans  &bs_del_gui  &trans
             >;
         };
 
@@ -81,10 +99,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5          &kp N6      &kp N7             &kp N8        &kp N9        &kp N0           &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4    &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp PRINTSCREEN  &trans
-&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &bt BT_CLR      &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &trans           &trans
-                                    &trans         &trans         &trans          &trans      &trans             &trans
+&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5        &kp N6      &kp N7             &kp N8        &kp N9        &kp N0           &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &to 0          &to 1         &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp PRINTSCREEN  &trans
+&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &bt BT_CLR    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp GLOBE        &trans
+                                    &trans         &trans         &trans        &trans      &trans             &trans
             >;
         };
 
