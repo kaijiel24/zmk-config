@@ -79,7 +79,7 @@
         caps_macro: caps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap_time 50>, <&kp CAPSLOCK>;
+            bindings = <&macro_tap_time 100>, <&kp CAPSLOCK>;
 
             label = "CAPS";
         };
