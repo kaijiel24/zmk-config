@@ -66,7 +66,7 @@
         caps_mac_mod: caps_mac_mod {
             compatible = "zmk,behavior-hold-tap";
             label = "CAPS_MAC_MOD";
-            bindings = <&kp>, <&caps_mac>;
+            bindings = <&kp>, <&caps_macro>;
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
@@ -76,7 +76,7 @@
     };
 
     macros {
-        caps_mac: caps {
+        caps_macro: caps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap_time 50>, <&kp CAPSLOCK>;
