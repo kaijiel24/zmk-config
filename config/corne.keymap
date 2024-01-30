@@ -63,13 +63,15 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        caps_mac_hold: caps_mac_hold {
+        caps_mac_mod: caps_mac_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "CAPS_MAC_HOLD";
+            label = "CAPS_MAC_MOD";
             bindings = <&kp>, <&caps_mac>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -77,7 +79,7 @@
         caps_mac: caps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap_time 100>, <&kp CAPSLOCK>;
+            bindings = <&macro_tap_time 50>, <&kp CAPSLOCK>;
 
             label = "CAPS";
         };
@@ -97,10 +99,10 @@
 
         mac_layer {
             bindings = <
-&trans                       &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&caps_mac_hold LEFT_SHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&trans                       &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-                                             &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &trans
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+&caps_mac_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+                                        &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &trans
             >;
         };
 
