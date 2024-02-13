@@ -73,6 +73,15 @@
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
         };
+
+        long_bt_clear: long_bt_clear {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LONG_BT_CLEAR";
+            bindings = <&bt>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -99,28 +108,28 @@
 
         mac_layer {
             bindings = <
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&caps_mac_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans  &trans  &trans  &trans
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
+&caps_mac_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
                                         &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &hold_num 6 BACKSPACE
             >;
         };
 
         win_lower_layer {
             bindings = <
-&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5        &kp N6      &kp N7             &kp N8        &kp N9        &kp N0           &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 1         &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp PRINTSCREEN  &trans
-&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &bt BT_CLR    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LG(SPACE)    &trans
-                                    &trans         &trans         &trans        &trans      &trans             &trans
+&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                     &kp N6      &kp N7             &kp N8        &kp N9        &kp N0           &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 1                      &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp PRINTSCREEN  &trans
+&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &long_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LG(SPACE)    &trans
+                                    &trans         &trans         &trans                     &trans      &trans             &trans
             >;
         };
 
         mac_lower_layer {
             bindings = <
-&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5        &kp N6      &kp N7             &kp N8        &kp N9        &kp N0                &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 0         &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp LG(LS(NUMBER_4))  &trans
-&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &bt BT_CLR    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LA(SPACE)         &trans
-                                    &trans         &trans         &trans        &trans      &trans             &trans
+&trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                     &kp N6      &kp N7             &kp N8        &kp N9        &kp N0                &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 0                      &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp LG(LS(NUMBER_4))  &trans
+&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &long_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LA(SPACE)         &trans
+                                    &trans         &trans         &trans                     &trans      &trans             &trans
             >;
         };
 
