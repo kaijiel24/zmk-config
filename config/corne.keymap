@@ -28,7 +28,7 @@
     behaviors {
         bs_del: bs_del {
             compatible = "zmk,behavior-mod-morph";
-            label = "BS_DEL";
+            label = "Backspace and Delete";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -37,16 +37,16 @@
 
         bs_del_alt: bs_del_alt {
             compatible = "zmk,behavior-mod-morph";
-            label = "BS_DEL_ALT";
-            bindings = <&mt RIGHT_ALT BACKSPACE>, <&kp DELETE>;
+            label = "Tap: bs_del, Hold: Alt";
+            bindings = <&mt RIGHT_ALT BACKSPACE>, <&mt RIGHT_ALT DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        hold_num: hold_num {
+        hold_layer: hold_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_NUM";
+            label = "Hold; Change Layer";
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
@@ -56,17 +56,17 @@
 
         bs_del_gui: bs_del_gui {
             compatible = "zmk,behavior-mod-morph";
-            label = "BS_DEL_GUI";
-            bindings = <&mt RIGHT_GUI BACKSPACE>, <&kp DELETE>;
+            label = "Tap: bs_del, Hold: Gui";
+            bindings = <&mt RIGHT_GUI BACKSPACE>, <&mt RIGHT_ALT DELETE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        caps_mac_mod: caps_mac_mod {
+        mac_caps_mod: mac_caps_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "CAPS_MAC_MOD";
-            bindings = <&kp>, <&caps_macro>;
+            label = "Tap: Mac Caps, Hold: Mod";
+            bindings = <&kp>, <&mac_caps_macro>;
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
@@ -74,9 +74,9 @@
             flavor = "tap-preferred";
         };
 
-        long_bt_clear: long_bt_clear {
+        hold_bt_clear: hold_bt_clear {
             compatible = "zmk,behavior-hold-tap";
-            label = "LONG_BT_CLEAR";
+            label = "Hold: BT Clear";
             bindings = <&bt>, <&none>;
 
             #binding-cells = <2>;
@@ -85,7 +85,7 @@
     };
 
     macros {
-        caps_macro: caps {
+        mac_caps_macro: caps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap_time 100>, <&kp CAPSLOCK>;
@@ -99,19 +99,19 @@
 
         win_layer {
             bindings = <
-&kp TAB              &kp Q  &kp W  &kp E     &kp R             &kp T          &kp Y        &kp U        &kp I                  &kp O    &kp P     &bs_del
-&mt LEFT_SHIFT CAPS  &kp A  &kp S  &kp D     &kp F             &kp G          &kp H        &kp J        &kp K                  &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
-&kp LCTRL            &kp Z  &kp X  &kp C     &kp V             &kp B          &kp N        &kp M        &kp COMMA              &kp DOT  &kp FSLH  &mt RCTRL ESCAPE
-                                   &kp LGUI  &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt  &hold_num 5 BACKSPACE
+&kp TAB              &kp Q  &kp W  &kp E     &kp R             &kp T          &kp Y        &kp U        &kp I                    &kp O    &kp P     &bs_del
+&mt LEFT_SHIFT CAPS  &kp A  &kp S  &kp D     &kp F             &kp G          &kp H        &kp J        &kp K                    &kp L    &kp SEMI  &mt RIGHT_SHIFT SQT
+&kp LCTRL            &kp Z  &kp X  &kp C     &kp V             &kp B          &kp N        &kp M        &kp COMMA                &kp DOT  &kp FSLH  &mt RCTRL ESCAPE
+                                   &kp LGUI  &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt  &hold_layer 5 BACKSPACE
             >;
         };
 
         mac_layer {
             bindings = <
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
-&caps_mac_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                 &trans  &trans  &trans
-                                        &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &hold_num 6 BACKSPACE
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                   &trans  &trans  &trans
+&mac_caps_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                   &trans  &trans  &trans
+&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans                   &trans  &trans  &trans
+                                        &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &hold_layer 6 BACKSPACE
             >;
         };
 
@@ -119,7 +119,7 @@
             bindings = <
 &trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                     &kp N6      &kp N7             &kp N8        &kp N9        &kp N0           &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 1                      &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp PRINTSCREEN  &trans
-&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &long_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LG(SPACE)    &trans
+&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &hold_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LG(SPACE)    &trans
                                     &trans         &trans         &trans                     &trans      &trans             &trans
             >;
         };
@@ -128,7 +128,7 @@
             bindings = <
 &trans  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5                     &kp N6      &kp N7             &kp N8        &kp N9        &kp N0                &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &to 0                      &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &kp LG(LS(NUMBER_4))  &trans
-&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &long_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LA(SPACE)         &trans
+&trans  &kp HOME      &kp END       &kp C_BRI_DEC  &kp C_BRI_INC  &hold_bt_clear BT_CLR 0    &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &out OUT_TOG  &kp LA(SPACE)         &trans
                                     &trans         &trans         &trans                     &trans      &trans             &trans
             >;
         };
@@ -144,19 +144,19 @@
 
         win_num_layer {
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp N1  &kp N2  &kp N3           &kp MINUS  &kp SLASH     &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp N4  &kp N5  &kp N6           &kp PLUS   &kp ASTERISK  &kp SPACE
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp N7  &kp N8  &kp N9           &kp EQUAL  &kp DEL       &trans
-                         &trans   &trans   &trans    &trans  &kp N0  &hold_num 0 DOT
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp N1  &kp N2  &kp N3             &kp MINUS  &kp SLASH     &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp N4  &kp N5  &kp N6             &kp PLUS   &kp ASTERISK  &kp SPACE
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp N7  &kp N8  &kp N9             &kp EQUAL  &kp DEL       &trans
+                         &trans   &trans   &trans    &trans  &kp N0  &hold_layer 0 DOT
             >;
         };
 
         mac_num_layer {
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp N1  &kp N2  &kp N3           &kp MINUS  &kp SLASH     &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp N4  &kp N5  &kp N6           &kp PLUS   &kp ASTERISK  &kp SPACE
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp N7  &kp N8  &kp N9           &kp EQUAL  &kp DEL       &trans
-                         &trans   &trans   &trans    &trans  &kp N0  &hold_num 1 DOT
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans    &kp N1  &kp N2  &kp N3             &kp MINUS  &kp SLASH     &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans    &kp N4  &kp N5  &kp N6             &kp PLUS   &kp ASTERISK  &kp SPACE
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &kp N7  &kp N8  &kp N9             &kp EQUAL  &kp DEL       &trans
+                         &trans   &trans   &trans    &trans  &kp N0  &hold_layer 1 DOT
             >;
         };
     };
