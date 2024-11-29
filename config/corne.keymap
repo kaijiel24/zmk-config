@@ -94,18 +94,25 @@
             tapping-term-ms = <200>;
         };
 
-        mac_layer_alt: mac_layer_alt {
+        alt_num_layer: alt_num_layer {
             compatible = "zmk,behavior-tap-dance";
-            label = "MAC_LAYER_ALT";
+            label = "ALT_NUM_LAYER";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_ALT>, <&to 6>;
         };
 
-        win_layer_gui: win_layer_gui {
+        gui_num_layer: gui_num_layer {
             compatible = "zmk,behavior-tap-dance";
-            label = "WIN_LAYER_GUI";
+            label = "GUI_NUM_LAYER";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_GUI>, <&to 5>;
+        };
+
+        num_layer: num_layer {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUM_LAYER";
+            #binding-cells = <0>;
+            bindings = <&none>, <&to 6>;
         };
     };
 
@@ -127,16 +134,16 @@
 &kp TAB              &kp Q        &kp W       &kp E       &kp R             &kp T          &kp Y        &kp U        &kp I           &kp O       &kp P                &bs_del
 &mt LEFT_SHIFT CAPS  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F      &kp G          &kp H        &mt RSHFT J  &mt RGUI K      &mt RALT L  &mt RCTRL SEMICOLON  &mt RIGHT_SHIFT SQT
 &kp LCTRL            &kp Z        &kp X       &kp C       &kp V             &kp B          &kp N        &kp M        &kp COMMA       &kp DOT     &kp FSLH             &mt RCTRL ESCAPE
-                                              &kp LGUI    &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt  &win_layer_gui
+                                              &kp LGUI    &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt  &gui_num_layer
             >;
         };
 
         mac_layer {
             bindings = <
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans          &trans  &trans  &trans
-&mac_caps_mod LSHIFT 0  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans          &trans  &trans  &trans
-&trans                  &trans  &trans  &trans        &trans        &trans         &trans  &trans       &trans          &trans  &trans  &trans
-                                        &kp LEFT_ALT  &mt LGUI TAB  &lt 3 ENTER    &trans  &bs_del_gui  &mac_layer_alt
+&trans           &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &trans
+&mac_caps_macro  &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &trans
+&none            &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &kp ESCAPE
+                                 &kp LEFT_ALT  &kp TAB  &lt 3 ENTER    &trans  &bs_del  &num_layer
             >;
         };
 
