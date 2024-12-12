@@ -168,9 +168,9 @@
 
         mac_layer {
             bindings = <
-&trans           &trans             &trans              &trans            &trans            &trans         &trans  &trans             &trans             &trans               &trans                &trans
-&mac_caps_macro  &left_hrm LCTRL A  &left_hrm LSHIFT S  &left_hrm LALT D  &left_hrm LGUI F  &trans         &trans  &right_hrm RGUI J  &right_hrm RALT K  &right_hrm RSHIFT L  &right_hrm RCTRL SQT  &kp SINGLE_QUOTE
-&none            &trans             &trans              &trans            &trans            &trans         &trans  &trans             &trans             &trans               &trans                &kp ESCAPE
+&trans           &trans             &trans              &trans            &trans            &trans         &trans  &trans             &trans             &trans               &trans                 &trans
+&mac_caps_macro  &left_hrm LCTRL A  &left_hrm LSHIFT S  &left_hrm LALT D  &left_hrm LGUI F  &trans         &trans  &right_hrm RGUI J  &right_hrm RALT K  &right_hrm RSHIFT L  &right_hrm RCTRL SEMI  &kp SINGLE_QUOTE
+&none            &trans             &trans              &trans            &trans            &trans         &trans  &trans             &trans             &trans               &trans                 &kp ESCAPE
                                                         &none             &kp TAB           &lt 3 ENTER    &trans  &bs_del            &num_layer
             >;
         };
