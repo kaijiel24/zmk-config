@@ -131,19 +131,19 @@
 
         win_layer {
             bindings = <
-&kp TAB              &kp Q        &kp W       &kp E       &kp R             &kp T          &kp Y        &kp U        &kp I           &kp O       &kp P                &bs_del
-&mt LEFT_SHIFT CAPS  &mt LCTRL A  &mt LALT S  &mt LGUI D  &mt LSHIFT F      &kp G          &kp H        &mt RSHFT J  &mt RGUI K      &mt RALT L  &mt RCTRL SEMICOLON  &mt RIGHT_SHIFT SQT
-&kp LCTRL            &kp Z        &kp X       &kp C       &kp V             &kp B          &kp N        &kp M        &kp COMMA       &kp DOT     &kp FSLH             &mt RCTRL ESCAPE
-                                              &kp LGUI    &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt  &gui_num_layer
+&kp TAB              &kp Q        &kp W              &kp E            &kp R             &kp T          &kp Y        &kp U            &kp I            &kp O              &kp P                &bs_del
+&mt LEFT_SHIFT CAPS  &mt LCTRL A  &mt RIGHT_SHIFT S  &mt RIGHT_ALT D  &mt RIGHT_GUI F   &kp G          &kp H        &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RIGHT_SHIFT L  &mt RCTRL SEMICOLON  &mt RIGHT_SHIFT SQT
+&kp LCTRL            &kp Z        &kp X              &kp C            &kp V             &kp B          &kp N        &kp M            &kp COMMA        &kp DOT            &kp FSLH             &mt RCTRL ESCAPE
+                                                     &kp LGUI         &mt LEFT_ALT TAB  &lt 2 ENTER    &lt 4 SPACE  &bs_del_alt      &gui_num_layer
             >;
         };
 
         mac_layer {
             bindings = <
-&trans           &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &trans
-&mac_caps_macro  &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &trans
-&none            &trans  &trans  &trans        &trans   &trans         &trans  &trans   &trans      &trans  &trans  &kp ESCAPE
-                                 &kp LEFT_ALT  &kp TAB  &lt 3 ENTER    &trans  &bs_del  &num_layer
+&trans           &trans  &trans  &trans  &trans   &trans         &trans  &trans   &trans      &trans  &trans  &trans
+&mac_caps_macro  &trans  &trans  &trans  &trans   &trans         &trans  &trans   &trans      &trans  &trans  &kp SINGLE_QUOTE
+&none            &trans  &trans  &trans  &trans   &trans         &trans  &trans   &trans      &trans  &trans  &kp ESCAPE
+                                 &none   &kp TAB  &lt 3 ENTER    &trans  &bs_del  &num_layer
             >;
         };
 
