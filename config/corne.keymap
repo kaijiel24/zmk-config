@@ -87,7 +87,7 @@
             #binding-cells = <0>;
             bindings = <&macro_tap_time 100>, <&kp CAPSLOCK>;
 
-            label = "Caps"
+            label = "Caps";
         };
         mac_ss: mac_ss {
             compatible = "zmk,behavior-macro";
