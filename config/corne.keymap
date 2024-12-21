@@ -131,7 +131,7 @@
             bindings = <
 &trans  &trans        &trans        &trans         &trans         &trans         &trans      &trans             &trans        &trans        &trans  &trans
 &trans  &kp LCTRL     &kp LSHIFT    &kp LALT       &kp LGUI       &trans         &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &trans  &trans
-&kp ESC &trans        &trans        &trans         &trans         &trans         &kp HOME    &kp PG_DOWN        &kp PG_UP        &kp END       &trans  &trans
+&kp ESC &trans        &trans        &trans         &trans         &trans         &kp HOME    &kp PG_DN        &kp PG_UP        &kp END       &trans  &trans
                                     &trans         &trans         &trans         &trans      &trans             &trans
             >;
         };
