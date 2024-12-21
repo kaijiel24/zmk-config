@@ -98,7 +98,7 @@
         };
         mac_lang: caps {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;              &trans
+            #binding-cells = <0>;
             bindings = <&kp F13>;
 
             label = "Language";
@@ -118,7 +118,7 @@
         };
 
 
-        num_layer { // 1
+        num_layer {
             bindings = <
 &kp ESC  &kp N1        &kp N2        &kp N3         &kp N4         &kp N5         &kp N6      &kp N7             &kp N8        &kp N9        &kp N0       &trans
 &trans  &kp LCTRL     &kp LSHIFT    &kp LALT       &kp LGUI       &trans         &kp PLUS    &kp MINUS          &kp UNDER     &kp EQUAL     &kp ASTERISK &trans
@@ -127,7 +127,7 @@
             >;
         };
 
-        nav_layer { // 2
+        nav_layer {
             bindings = <
 &trans  &trans        &trans        &trans         &trans         &trans         &trans      &trans             &trans        &trans        &trans  &trans
 &trans  &kp LCTRL     &kp LSHIFT    &kp LALT       &kp LGUI       &trans         &kp LEFT    &kp DOWN           &kp UP        &kp RIGHT     &trans  &trans
@@ -136,7 +136,7 @@
             >;
         };
 
-        sym_layer { // 3
+        sym_layer {
             bindings = <
 &trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT      &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
 &trans  &kp LCTRL        &kp LSHIFT   &kp LALT   &kp LGUI    &trans           &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
@@ -145,7 +145,7 @@
             >;
         };
 
-        util_layer{ // 4
+        util_layer{ 
             bindings = <
 &trans  &trans        &trans        &trans         &trans         &trans         &trans      &trans             &trans        &trans        &trans  &trans
 &trans  &trans        &trans        &trans         &trans         &trans         &trans      &mac_lang          &mac_ss       &trans        &trans  &trans
