@@ -79,7 +79,6 @@
             continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
             ignore-modifiers;
         };
-};
     };
 
     macros {
