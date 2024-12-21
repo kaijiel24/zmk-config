@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors/num_word.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <behaviors/num_word.dtsi>
 
 &mt {
     flavor = "balanced";
@@ -39,13 +39,6 @@
             tapping-term-ms = <200>;
         };
 
-        to_util_layer: to_util_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TO_UTIL_LAYER";
-            #binding-cells = <0>;
-            bindings = <&kp LSHIFT>, <&to 4>;
-        };
-
         right_hrm: right_hrm {
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_HRM";
@@ -73,6 +66,7 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41 36 37 38>;
         };
+
         nav_word: nav_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
@@ -102,10 +96,10 @@
 
         main_layer {
             bindings = <
-&num_word 1     &kp Q              &kp W              &kp E                  &kp R             &kp T          &kp Y        &kp U              &kp I              &kp O               &kp P                  &bs_del
-&caps_word  &left_hrm RCTRL A  &left_hrm LSHFT S  &left_hrm RIGHT_ALT D  &left_hrm LGUI F  &kp G          &kp H        &right_hrm RGUI J  &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
+&num_word 1  &kp Q              &kp W              &kp E                  &kp R             &kp T          &kp Y        &kp U              &kp I              &kp O               &kp P                  &bs_del
+&caps_word   &left_hrm RCTRL A  &left_hrm LSHFT S  &left_hrm RIGHT_ALT D  &left_hrm LGUI F  &kp G          &kp H        &right_hrm RGUI J  &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
 &nav_word 2  &kp Z              &kp X              &kp C                  &kp V             &kp B          &kp N        &kp M              &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
-                                                  &kp LSHFT              &kp TAB           &lt 3 ENTER    &lt 4 SPACE  &bs_del            &to_util_layer
+                                                   &kp LSHFT              &kp TAB           &lt 3 ENTER    &lt 4 SPACE  &bs_del            &kp RSHFT
             >;
         };
 
