@@ -110,9 +110,9 @@
 
         main_layer { // 0
             bindings = <
-&lt TAB 1          &kp Q  &kp W  &kp E          &kp R             &kp T          &kp Y        &kp U        &kp I           &kp O    &kp P          &bs_del
+&lt 1 TAB          &kp Q  &kp W  &kp E          &kp R             &kp T          &kp Y        &kp U        &kp I           &kp O    &kp P          &bs_del
 &caps_word  &left_hrm LCTRL A  &left_hrm LSHIFT S  &left_hrm LALT D  &left_hrm LGUI F  &trans         &trans  &right_hrm RGUI J  &right_hrm RALT K  &right_hrm RSHIFT L  &right_hrm RCTRL SEMI  &kp SINGLE_QUOTE
-&lt ESC 2            &kp Z  &kp X  &kp C          &kp V             &kp B          &kp N        &kp M        &kp COMMA       &kp DOT  &kp FSLH       &kp ESCAPE
+&lt 2 ESC            &kp Z  &kp X  &kp C          &kp V             &kp B          &kp N        &kp M        &kp COMMA       &kp DOT  &kp FSLH       &kp ESCAPE
                                 &kp LSHIFT             &kp TAB           &lt 3 ENTER    &lt 4 SPACE  &bs_del            &shift_util_layer RSHIFT
             >;
         };
