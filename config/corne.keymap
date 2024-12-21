@@ -82,21 +82,21 @@
     };
 
     macros {
-        mac_caps: caps {
+        mac_caps: mac_caps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap_time 100>, <&kp CAPSLOCK>;
 
-            label = "CAPS";
+            label = "Caps"
         };
-        mac_ss: caps {
+        mac_ss: mac_ss {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(LG(A))>;
 
             label = "ScreenShot";
         };
-        mac_lang: caps {
+        mac_lang: mac_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp F13>;
