@@ -73,6 +73,22 @@
             continue-list = <LEFT DOWN UP RIGHT PG_DN PG_UP HOME END>;
             ignore-modifiers;
         };
+
+        paste_inner: paste_inner {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PASTE_INNER";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>, <&kp LG(LS(V))>;
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-hold-tap";
+            label = "PASTE";
+            bindings = <&paste_script>, <&paste_inner>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -88,6 +104,13 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LG(A))>;
             label = "MAC_SS";
+        };
+
+        paste_script: paste_script {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LG(V))>;
+            label = "PASTE_SCRIPT";
         };
     };
 
@@ -123,10 +146,10 @@
 
         sym_layer {
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT      &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp LCTRL        &kp LSHFT    &kp LALT   &kp LGUI    &trans           &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
-&trans  &trans           &trans       &trans     &kp PIPE    &kp BACKSLASH    &kp EQUAL  &kp MINUS         &kp UNDER          &kp MINUS             &kp TILDE              &trans
-                                      &trans     &trans      &trans           &trans     &trans            &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp LCTRL        &kp LSHFT    &kp LALT   &kp LGUI    &kp BSLH       &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
+&trans  &kp LG(Z)        &kp LG(X)    &kp LG(C)  &paste 0 0  &kp PIPE       &kp EQUAL  &kp MINUS         &kp UNDER          &kp MINUS             &kp TILDE              &trans
+                                      &trans     &trans      &trans         &trans     &trans            &trans
             >;
         };
 
