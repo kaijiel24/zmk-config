@@ -148,10 +148,10 @@
 
         sym_layer {
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp LCTRL        &kp LSHFT    &kp LALT   &kp LGUI    &kp BSLH       &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
-&trans  &kp LG(Z)        &kp LG(X)    &kp LG(C)  &paste 0 0  &kp PIPE       &kp EQUAL  &kp MINUS         &kp UNDER          &kp MINUS             &kp TILDE              &trans
-                                      &trans     &trans      &trans         &trans     &trans            &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR    &kp PERCENT    &kp CARET  &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp LCTRL        &kp LSHFT    &kp LALT   &kp LGUI      &kp BSLH       &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans
+&trans  &kp LG(Z)        &kp LG(X)    &kp LG(C)  &paste_inner  &kp PIPE       &kp EQUAL  &kp MINUS         &kp UNDER          &kp MINUS             &kp TILDE              &trans
+                                      &trans     &trans        &trans         &trans     &trans            &trans
             >;
         };
 
