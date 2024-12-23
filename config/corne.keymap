@@ -78,7 +78,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PASTE_INNER";
             #binding-cells = <0>;
-            bindings = <&kp LG(V)>, <&kp LG(LS(V))>;
+            bindings = <&kp LG(V)>, <&dacs_paste>;
         };
 
         paste: paste {
@@ -113,6 +113,14 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LG(V))>;
             label = "PASTE_SCRIPT";
+        };
+
+        dacs_paste: dacs_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(V))>, <&macro_wait_time 150>, <&kp RETURN>;
+
+            label = "DACS_PASTE";
         };
     };
 
