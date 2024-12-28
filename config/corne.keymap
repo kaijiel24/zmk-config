@@ -91,6 +91,15 @@
             quick-tap-ms = <175>;
             flavor = "balanced";
         };
+
+        mod_bs_del: mod_bs_del {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_BS_DEL";
+            bindings = <&kp>, <&bs_del>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+        };
     };
 
     macros {
@@ -129,10 +138,10 @@
 
         main_layer {
             bindings = <
-&num_word 1  &kp Q              &kp W              &kp E                  &kp R             &kp T          &kp Y        &kp U              &kp I              &kp O               &kp P                  &bs_del
-&caps_word   &left_hrm RCTRL A  &left_hrm LSHFT S  &left_hrm RIGHT_ALT D  &left_hrm LGUI F  &kp G          &kp H        &right_hrm RGUI J  &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
-&nav_word 2  &kp Z              &kp X              &kp C                  &kp V             &kp B          &kp N        &kp M              &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
-                                                   &kp LSHFT              &kp TAB           &lt 3 ENTER    &lt 4 SPACE  &bs_del            &kp RSHFT
+&num_word 1  &kp Q              &kp W              &kp E                  &kp R               &kp T          &kp Y        &kp U                &kp I              &kp O               &kp P                  &bs_del
+&caps_word   &left_hrm RCTRL A  &left_hrm LSHFT S  &left_hrm RIGHT_ALT D  &left_hrm LGUI F    &kp G          &kp H        &right_hrm RGUI J    &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
+&nav_word 2  &kp Z              &kp X              &kp C                  &kp V               &kp B          &kp N        &kp M                &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
+                                                   &kp LSHFT              &mt LEFT_SHIFT TAB  &lt 1 ENTER    &lt 3 SPACE  &mod_bs_del RSHFT 0  &nav_word
             >;
         };
 
