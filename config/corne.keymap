@@ -150,7 +150,7 @@
 &to 0   &kp N1                 &kp N2                &kp N3                &kp N4                &kp N5       &kp N6    &kp N7                &kp N8              &kp N9                  &kp N0  &trans
 &trans  &left_hrm LCTRL ASTRK  &left_hrm LSHFT PLUS  &left_hrm LALT MINUS  &left_hrm LGUI UNDER  &kp EQUAL    &kp LEFT  &right_hrm RGUI DOWN  &right_hrm RALT UP  &right_hrm LSHFT RIGHT  &trans  &trans
 &to 0   &trans                 &trans                &trans                &trans                &trans       &kp HOME  &kp PG_DN             &kp PG_UP           &kp END                 &trans  &trans
-                                                     &to 1                 &trans                &trans       &trans    &trans                &to 1
+                                                     &to 0                 &trans                &trans       &trans    &trans                &to 0
             >;
         };
 
@@ -170,6 +170,15 @@
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &kp C_BRI_DEC  &kp C_BRI_INC  &bt_clear_2    &trans  &trans  &trans  &trans  &trans  &trans
                                     &trans         &trans         &trans         &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        Util {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
