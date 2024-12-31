@@ -138,30 +138,28 @@
 
         main_layer {
             bindings = <
-&num_word 1  &kp Q              &kp W              &kp E                  &kp R               &kp T          &kp Y        &kp U                &kp I              &kp O               &kp P                  &bs_del
+&num_word 1  &kp Q              &kp W              &kp E             &kp R               &kp T          &kp Y        &kp U                &kp I              &kp O               &kp P                  &bs_del
 &caps_word   &left_hrm LCTRL A  &left_hrm LSHFT S  &left_hrm LALT D  &left_hrm LGUI F    &kp G          &kp H        &right_hrm RGUI J    &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
-&none  &kp Z              &kp X              &kp C                  &kp V               &kp B          &kp N        &kp M                &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
-                                                   &num_word 1              &mt LEFT_SHIFT TAB  &lt 1 ENTER    &lt 2 SPACE  &mod_bs_del RSHFT 0  &nav_word 1
+&none        &kp Z              &kp X              &kp C             &kp V               &kp B          &kp N        &kp M                &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
+                                                   &num_word 1       &mt LEFT_SHIFT TAB  &lt 1 ENTER    &lt 2 SPACE  &mod_bs_del RSHFT 0  &nav_word 1
             >;
         };
 
         num_layer {
             bindings = <
-&to 0   &kp N1     &kp N2     &kp N3    &kp N4    &kp N5         &kp N6    &kp N7     &kp N8     &kp N9     &kp N0     &trans
-&trans    &left_hrm LCTRL ASTRK    &left_hrm LSHFT PLUS    &left_hrm LALT MINUS    &left_hrm LGUI UNDER    &kp EQUAL    &kp LEFT    &right_hrm RGUI DOWN    &right_hrm RALT UP    &right_hrm LSHFT RIGHT    &trans    &trans 
-&to 0   &trans     &trans     &trans    &trans    &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-                              &to 1    &trans    &trans         &trans    &trans     &to 1
+&to 0   &kp N1                 &kp N2                &kp N3                &kp N4                &kp N5       &kp N6    &kp N7                &kp N8              &kp N9                  &kp N0  &trans
+&trans  &left_hrm LCTRL ASTRK  &left_hrm LSHFT PLUS  &left_hrm LALT MINUS  &left_hrm LGUI UNDER  &kp EQUAL    &kp LEFT  &right_hrm RGUI DOWN  &right_hrm RALT UP  &right_hrm LSHFT RIGHT  &trans  &trans
+&to 0   &trans                 &trans                &trans                &trans                &trans       &kp HOME  &kp PG_DN             &kp PG_UP           &kp END                 &trans  &trans
+                                                     &to 1                 &trans                &trans       &trans    &trans                &to 1
             >;
         };
 
-
         sym_layer {
             bindings = <
-&trans  &kp EXCL &kp AT  &kp HASH  &kp DLLR    &kp PRCNT     &kp CARET  &-kp AMPS     &kp ASTRK       &kp LPAR   &kp RPAR   &trans
-&trans    &left_hrm LCTRL ASTRK    &left_hrm LSHFT PLUS    &left_hrm LALT MINUS    &left_hrm LGUI UNDER    &kp EQUAL    &mac_lang    &right_hrm RGUI LBKT    &right_hrm RALT RBKT    &right_hrm LSHFT LBRC    &right_hrm LCTRL RBRC    &trans 
-&trans  &kp LG(Z)        &kp LG(X)    &kp LG(C)  &paste_inner  &kp mac_lang       &mac_ss   &kp BSLH         &kp PIPE          &kp GRAVE             &kp TILDE              &trans
-
-                                      &trans     &trans        &trans         &trans     &trans            &trans
+&trans  &kp EXCL               &kp AT                &kp HASH              &kp DLLR              &kp PRCNT        &kp CARET  &kp AMPS              &kp ASTRK             &kp LPAR               &kp RPAR               &trans
+&trans  &left_hrm LCTRL ASTRK  &left_hrm LSHFT PLUS  &left_hrm LALT MINUS  &left_hrm LGUI UNDER  &kp EQUAL        &mac_lang  &right_hrm RGUI LBKT  &right_hrm RALT RBKT  &right_hrm LSHFT LBRC  &right_hrm LCTRL RBRC  &trans
+&trans  &kp LG(Z)              &kp LG(X)             &kp LG(C)             &paste_inner          &paste_script    &mac_ss    &kp BSLH              &kp PIPE              &kp GRAVE              &kp TILDE              &trans
+                                                     &trans                &trans                &trans           &trans     &trans                &trans
             >;
         };
 
