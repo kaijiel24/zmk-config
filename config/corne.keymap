@@ -144,7 +144,7 @@
         test: test {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp T &kp E &kp S &kp T &kp T &kp E &kp S &kp T &kp N2 &kp N4>;
+            bindings = <&kp T &kp E &kp S &kp T &kp T &kp E &kp S &kp T &kp N2 &kp N4 &kp RETURN>;
             label = "TEST";
         };
     };
