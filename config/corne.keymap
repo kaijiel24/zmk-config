@@ -100,6 +100,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <180>;
         };
+
+        test_double: test_double {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TEST_DOUBLE";
+            #binding-cells = <0>;
+            bindings = <&none>, <&test>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -131,6 +140,13 @@
 
             label = "DACS_PASTE";
         };
+
+        test: test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp E &kp S &kp T &kp T &kp E &kp S &kp T &kp N2 &kp N4>;
+            label = "TEST";
+        };
     };
 
     keymap {
@@ -138,10 +154,10 @@
 
         main_layer {
             bindings = <
-&num_word 1  &kp Q              &kp W              &kp E             &kp R             &kp T          &kp Y        &kp U              &kp I              &kp O               &kp P                  &bs_del
-&caps_word   &left_hrm LCTRL A  &left_hrm LSHFT S  &left_hrm LALT D  &left_hrm LGUI F  &kp G          &kp H        &right_hrm RGUI J  &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
-&none        &kp Z              &kp X              &kp C             &kp V             &kp B          &kp N        &kp M              &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
-                                                   &kp LEFT_SHIFT    &kp TAB           &lt 1 ENTER    &lt 2 SPACE  &bs_del            &kp RIGHT_SHIFT
+&num_word 1   &kp Q              &kp W              &kp E             &kp R             &kp T          &kp Y        &kp U              &kp I              &kp O               &kp P                  &kp F14
+&caps_word    &left_hrm LCTRL A  &left_hrm LSHFT S  &left_hrm LALT D  &left_hrm LGUI F  &kp G          &kp H        &right_hrm RGUI J  &right_hrm RALT K  &right_hrm LSHFT L  &right_hrm RCTRL SEMI  &kp SQT
+&test_double  &kp Z              &kp X              &kp C             &kp V             &kp B          &kp N        &kp M              &kp COMMA          &kp DOT             &kp FSLH               &kp ESC
+                                                    &kp LEFT_SHIFT    &kp TAB           &lt 1 ENTER    &lt 2 SPACE  &bs_del            &kp RIGHT_SHIFT
             >;
         };
 
