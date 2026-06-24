@@ -165,7 +165,7 @@
             bindings = <
 &to 0   &kp N1                 &kp N2                &kp N3                &kp N4                &kp N5           &kp N6    &kp N7                &kp N8              &kp N9                  &kp N0  &trans
 &trans  &left_hrm LCTRL LG(A)  &left_hrm LSHFT PLUS  &left_hrm LALT MINUS  &left_hrm LGUI UNDER  &kp EQUAL        &kp LEFT  &right_hrm RGUI DOWN  &right_hrm RALT UP  &right_hrm LSHFT RIGHT  &trans  &trans
-&to 0   &kp LG(Z)              &kp LG(X)             &kp LG(C)             &paste_inner          &paste_script    &trans    &trans                &trans              &trans                  &trans  &trans
+&to 0   &kp LG(Z)              &kp LG(X)             &kp LG(C)             &paste_inner          &paste_script    &kp HOME  &kp PAGE_DOWN         &kp PAGE_UP         &kp END                 &trans  &trans
                                                      &to 0                 &trans                &trans           &trans    &trans                &to 0
             >;
         };
