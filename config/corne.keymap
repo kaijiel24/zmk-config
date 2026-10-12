@@ -181,7 +181,7 @@
             bindings = <
 &trans  &kp EXCL               &kp AT                &kp HASH              &kp DLLR              &kp PRCNT    &kp CARET  &kp AMPS              &kp ASTRK             &kp LPAR               &kp RPAR               &trans
 &trans  &left_hrm LCTRL ASTRK  &left_hrm LSHFT PLUS  &left_hrm LALT MINUS  &left_hrm LGUI UNDER  &kp EQUAL    &mac_lang  &right_hrm RGUI LBKT  &right_hrm RALT RBKT  &right_hrm LSHFT LBRC  &right_hrm LCTRL RBRC  &trans
-&trans  &trans                 &kp TILDE             &kp GRAVE             &kp PIPE              &kp BSLH     &mac_ss    &kp PG_UP             &kp PG_DN             &trans                 &trans                 &trans
+&trans  &trans                 &kp TILDE             &kp GRAVE             &kp PIPE              &kp BSLH     &mac_ss    &kp PG_DN             &kp PG_UP             &trans                 &trans                 &trans
                                                      &trans                &trans                &trans       &trans     &trans                &trans
             >;
         };
